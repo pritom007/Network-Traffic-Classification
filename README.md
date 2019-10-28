@@ -5,6 +5,9 @@ This is a researh project for classifying network traffic. We collected more tha
 Our current results-
 
 Decesion tree 95% accurecy 
+
 Randomforest 93% accuracy
+
 SVM 91% accuracy
+
 DNN 85% accuracy
