@@ -4,10 +4,10 @@ This is a researh project for classifying network traffic. We collected more tha
 
 Our current results-
 
-Decesion tree 95% accurecy 
+Decesion tree 98% accurecy 
 
-Randomforest 93% accuracy
+Randomforest 97% accuracy
 
 KNN 91% accuracy
 
-DNN 85% accuracy
+DNN 95% accuracy
