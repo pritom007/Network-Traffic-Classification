@@ -8,6 +8,6 @@ Decesion tree 95% accurecy
 
 Randomforest 93% accuracy
 
-SVM 91% accuracy
+KNN 91% accuracy
 
 DNN 85% accuracy
