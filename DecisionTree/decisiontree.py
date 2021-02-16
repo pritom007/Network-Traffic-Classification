@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 
-file_dir = "D:\\SDN Project\\Data\\"
+file_dir = "..\\Data\\"
 
 names = ['#flow_id', 'protocol', 'src_ip', 'src_port', 'dst_ip', 'dst_port', 'ndpi_proto_num', 'src2dst_packets',
          'src2dst_bytes', 'dst2src_packets', 'dst2src_bytes', 'ndpi_proto', 'class']
