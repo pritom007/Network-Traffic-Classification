@@ -1,6 +1,6 @@
 # Network-Traffic-Classification
 
-This is a researvh project for classifying network traffic. We collected more than 100000 flows from the network. After that we used nDPI to analze the flows. We got more than 100 types of application. Then we put those application into 7 classes. After that we tried different ML algorithms to classify them.
+This is a research project for classifying network traffic. We collected more than 300000 flows from the network. After that we used nDPI to analze the flows. We got more than 100 types of application. Then we put those application into 7 classes. After that we tried different ML algorithms to classify them.
 
 Our current results-
 
