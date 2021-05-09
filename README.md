@@ -12,4 +12,6 @@ KNN 97.24% accuracy
 
 PAA 99.29% accuracy
 
+To get the dataset checout the instructions in dataset folder.
+
 Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
