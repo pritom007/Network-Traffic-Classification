@@ -1,13 +1,11 @@
 Since .pcap files are big in size we processed the data in csv format. And still the file is about 150mb. Please email me: 
 pritom007@live.com 
 or 
-pritom@sjtu.edu.com to get the data.
+pritom@sjtu.edu.com and also write a short note why you need the data.
 
 This data is only available for research purpose not for commercial use.
 
-
 Please cite my work if you use this dataset for research.
-
 
 @article{mondal2021dynamic,
   title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},
