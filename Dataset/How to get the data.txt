@@ -1,4 +1,7 @@
-Since .pcap files are big in size we processed the data in csv format. And still the file is about 150mb. Please email me: pritom007@live.com or pritom@sjtu.edu.com to get the data.
+Since .pcap files are big in size we processed the data in csv format. And still the file is about 150mb. Please email me: 
+pritom007@live.com 
+or 
+pritom@sjtu.edu.com to get the data.
 
 This data is only available for research purpose not for commercial use.
 
