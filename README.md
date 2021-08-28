@@ -6,7 +6,7 @@ Our current results-
 
 Decesion tree 95.8% accurecy 
 
-(I have added a new file using https://github.com/pritom007/Network-Traffic-Classification/blob/master/DecisionTree/DecisionTree.ipynb  with clean code. You just follow this code and implement for KNN, RF)
+(I have added a new file https://github.com/pritom007/Network-Traffic-Classification/blob/master/DecisionTree/DecisionTree.ipynb  with clean code. You just follow this code and implement for KNN, RF)
 
 Randomforest 96.69% accuracy
 
