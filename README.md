@@ -21,3 +21,14 @@ To get the dataset checout the instructions in dataset folder.
 We used wireshark to collect the packets.Since for the project we wanted to use lab environment data, we first redirected out labnetwork to one pc and in that pc we used wireshark. After collecting the packets (as .pcap file), we used ndpi to analysis the the packets and get the flow info and then we export that data as excel file. The `data.csv` contains information of all parameters. however, for our project we only used top 7 most important parameter as feature.
 
 Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
+
+## To cite the pare and code:
+article{mondal2021dynamic,
+  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},
+  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},
+  journal={Connection Science},
+  pages={1--26},
+  year={2021},
+  publisher={Taylor \& Francis}
+}
+
