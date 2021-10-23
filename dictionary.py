@@ -1,5 +1,5 @@
 def name_convert(x):
-    file = open('D:\\SDN Project\\Data\\test.txt', 'r')
+    file = open('..\test.txt', 'r')
     dict_c = {}
     for i in file.readlines():
         i = str(i).strip()
