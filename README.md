@@ -23,12 +23,12 @@ We used wireshark to collect the packets.Since for the project we wanted to use 
 Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
 
 ## To cite the pare and code:
-article{mondal2021dynamic,
-  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},
-  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},
-  journal={Connection Science},
-  pages={1--26},
-  year={2021},
-  publisher={Taylor \& Francis}
+article{mondal2021dynamic,<br>
+  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},<br>
+  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},<br>
+  journal={Connection Science},<br>
+  pages={1--26},<br>
+  year={2021},<br>
+  publisher={Taylor \& Francis}<br>
 }
 
