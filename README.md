@@ -20,6 +20,10 @@ To get the dataset checout the instructions in dataset folder.
 
 We used wireshark to collect the packets.Since for the project we wanted to use lab environment data, we first redirected out labnetwork to one pc and in that pc we used wireshark. After collecting the packets (as .pcap file), we used ndpi to analysis the the packets and get the flow info and then we export that data as excel file. The `data.csv` contains information of all parameters. however, for our project we only used top 7 most important parameter as feature.
 
+Github has limited the download so I am sharing a gdrive link for downloading the raw data: https://drive.google.com/file/d/1lcQmYyZutjsW_yJoHgx3Vles8eCgwQeD/view?usp=sharing
+
+After you download it, you have to pre-process, in the paper we showed in a table that how did we grouped the applications in 10 classes. 
+
 Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
 
 ## To cite the pare and code:
