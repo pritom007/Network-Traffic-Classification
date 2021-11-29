@@ -26,7 +26,8 @@ After you download it, you have to pre-process, in the paper we showed in a tabl
 
 Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
 
-## To cite the pare and code:
+## To cite the paper and code:
+
 article{mondal2021dynamic,<br>
   title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},<br>
   author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},<br>
@@ -35,4 +36,5 @@ article{mondal2021dynamic,<br>
   year={2021},<br>
   publisher={Taylor \& Francis}<br>
 }
+
 
