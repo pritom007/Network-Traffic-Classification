@@ -1,6 +1,6 @@
 # Network-Traffic-Classification
 
-This is a research project for classifying network traffic. We collected more than 300000 flows from the network. After that we used nDPI to analze the flows. We got more than 100 types of application. Then we put those application into 7 classes. After that we tried different ML algorithms to classify them.
+This is a research project for classifying network traffic. We collected more than 300000 flows from the network. After that we used nDPI to analze the flows. We got more than 100 types of application. Then we group those application into 7 classes. After that we tried different ML algorithms to classify them.
 
 Our current results-
 
@@ -12,7 +12,7 @@ Randomforest 96.69% accuracy
 
 KNN 97.24% accuracy
 
-PAA 99.29% accuracy
+PAA 99.29% accuracy (read the paper to know more)
 
 To get the dataset checout the instructions in dataset folder.
 
