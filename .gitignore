@@ -1,1 +1,24 @@
+# Local datasets
 network_traffic.csv
+data/
+Data/
+*.pcap
+*.pcapng
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated experiment outputs
+artifacts/
+models/
+reports/
+*.joblib
+cm_1.png
+
+# OS/editor files
+.DS_Store
+.idea/
+.vscode/

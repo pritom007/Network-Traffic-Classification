@@ -1,78 +1,144 @@
-# Network-Traffic-Classification
+# Network Traffic Classification
 
-This is a research project for classifying network traffic. We collected more than 300000 flows from the network. After that, we used nDPI to analyze the flows. We got more than 100 types of applications. Then we group that application into 10 classes. After that, we tried different ML algorithms to classify them.
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange.svg)](https://scikit-learn.org/)
+[![Paper](https://img.shields.io/badge/Paper-Connection%20Science-green.svg)](https://doi.org/10.1080/09540091.2020.1870437)
 
-Our current results-
+Machine-learning experiments for classifying network traffic flows collected from a Docker-based SDN lab network. The dataset contains more than 300,000 flows analyzed with nDPI, grouped from 100+ application protocols into 10 traffic classes.
 
-Decision tree 95.8% accuracy
+This repository includes the original research artifacts, saved models, confusion matrices, and a cleaner Python workflow for reproducing common experiments.
 
-(I have added a new file https://github.com/pritom007/Network-Traffic-Classification/blob/master/DecisionTree/DecisionTree.ipynb with clean code. You just follow this code and implement it for KNN, RF)
+## Research Summary
 
-Random forest 96.69% accuracy
+The project evaluates supervised machine-learning models for flow-level network traffic classification using seven selected flow features:
 
-KNN 97.24% accuracy
+| Feature group | Columns |
+| --- | --- |
+| Protocol metadata | `protocol`, `src_port`, `dst_port` |
+| Packet counts | `src2dst_packets`, `dst2src_packets` |
+| Byte counts | `src2dst_bytes`, `dst2src_bytes` |
 
-PAA 99.29% accuracy (read the paper to know more)
+Reported results from the original experiments:
 
-To get the dataset check out the instructions in the dataset folder.
+| Method | Accuracy |
+| --- | ---: |
+| Decision Tree | 95.80% |
+| Random Forest | 96.69% |
+| KNN | 97.24% |
+| PAA | 99.29% |
 
-# How Did we collect Data
+For the full methodology, class grouping, and experimental setup, read the paper:
 
-We used Wireshark to collect the packets. Since for the project we wanted to use lab environment data, we first redirected our lab-network to one personal computer(pc) and in that pc we used Wireshark. After collecting the packets (as a .pcap file), we used ndpi to analyze the packets and get extract flow info and then we export that data as an excel file. The `data.csv` contains information on all parameters. However, for our project, we only used the top 7 most important parameters as features.
+> P. K. Mondal, L. P. Aguirre Sanchez, E. Benedetto, Y. Shen, and M. Guo, "A dynamic network traffic classifier using supervised ML for a Docker-based SDN network," Connection Science, 2021. https://doi.org/10.1080/09540091.2020.1870437
 
-Github has limited the download so I am sharing a gdrive link for downloading the raw data: https://drive.google.com/file/d/1lcQmYyZutjsW_yJoHgx3Vles8eCgwQeD/view?usp=sharing
+## Repository Layout
 
-After you download it, you have to pre-process, in the paper, we showed in a table that how did we group the applications in 10 classes. 
+```text
+.
+├── DecisionTree/                  # Original decision-tree scripts, notebook, model, outputs
+├── RandomForest/                  # Original random-forest scripts, model, outputs
+├── KNN/                           # Original KNN scripts, model, outputs
+├── DNN/                           # Original neural-network scripts, model, outputs
+├── Dataset/                       # Dataset access notes
+├── network_traffic_classification/ # Modern reusable Python package
+├── docs/                          # Project documentation
+├── dictionary.py                  # Legacy protocol-to-class helper
+├── test.txt                       # Protocol-to-class mapping used by legacy scripts
+└── README.md
+```
 
-Please read the following paper to know more: https://doi.org/10.1080/09540091.2020.1870437
+## Quick Start
 
-## To cite the paper and code:
+Create a virtual environment and install the dependencies:
 
-article{mondal2021dynamic,<br>
-  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},<br>
-  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},<br>
-  journal={Connection Science},<br>
-  pages={1--26},<br>
-  year={2021},<br>
-  publisher={Taylor \& Francis}<br>
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+For the legacy DNN scripts, install the optional TensorFlow dependency:
+
+```bash
+pip install -r requirements-dnn.txt
+```
+
+Train a model with the modern CLI:
+
+```bash
+python -m network_traffic_classification train \
+  --data path/to/total_class.csv \
+  --model random-forest \
+  --output models/random_forest.joblib
+```
+
+Available model names:
+
+```text
+decision-tree
+random-forest
+knn
+```
+
+The CLI prints accuracy and a classification report. It can also save the trained model and class labels:
+
+```bash
+python -m network_traffic_classification train \
+  --data path/to/total_class.csv \
+  --model knn \
+  --output artifacts/knn.joblib \
+  --labels-output artifacts/classes.txt \
+  --test-size 0.33 \
+  --random-state 42
+```
+
+## Dataset
+
+The raw `.pcap` files and processed CSV are large, so the dataset is not committed to this repository. See [Dataset/How to get the data.txt](Dataset/How%20to%20get%20the%20data.txt) for access instructions and research-use conditions.
+
+Expected labeled training file:
+
+```text
+total_class.csv
+```
+
+Expected columns:
+
+```text
+#flow_id, protocol, src_ip, src_port, dst_ip, dst_port, ndpi_proto_num,
+src2dst_packets, src2dst_bytes, dst2src_packets, dst2src_bytes,
+ndpi_proto, class
+```
+
+## Original Scripts
+
+The original scripts are preserved for traceability:
+
+```bash
+python DecisionTree/decisiontree.py
+python RandomForest/randomforest.py
+python KNN/knn.py
+python DNN/dnn.py
+```
+
+Some legacy scripts contain machine-specific Windows paths. Prefer the modern CLI for new experiments, or update `file_dir` in the legacy scripts before running them.
+
+## Citation
+
+If this repository or dataset supports your work, please cite:
+
+```bibtex
+@article{mondal2021dynamic,
+  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},
+  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P. and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},
+  journal={Connection Science},
+  pages={1--26},
+  year={2021},
+  publisher={Taylor \& Francis},
+  doi={10.1080/09540091.2020.1870437}
 }
+```
 
-# 中文版
-# 网络流量分类
+## Contributing
 
-这是一个对网络流量进行分类的研究项目。我们从网络中收集了超过 300000 个流。之后，我们使用 nDPI 来分析流量。我们收到了 100 多种类型的应用程序。然后我们将该应用程序分为 10 个类。之后，我们尝试了不同的 ML 算法来对它们进行分类。
-
-我们目前的结果——
-
-Decision tree 95.8% 准确率
-
-（我用干净的代码添加了一个新文件 https://github.com/pritom007/Network-Traffic-Classification/blob/master/DecisionTree/DecisionTree.ipynb。您只需按照此代码并为 KNN、RF 实现它）
-
-Random forest 96.69% 准确率
-
-KNN 97.24% 准确率
-
-PAA 99.29% 准确率（阅读论文了解更多）
-
-要获取数据集，请查看数据集文件夹中的说明。
-
-# 如何收集数据的
-
-我们使用 Wireshark 来收集数据包。由于对于我们想要使用实验室环境数据的项目，我们首先将我们的实验室网络重定向到一台个人计算机（PC），并在该 PC 中使用 Wireshark。收集数据包（作为 .pcap 文件）后，我们使用 ndpi 分析数据包并获取提取流信息，然后将该数据导出为 excel 文件。 `data.csv` 包含有关所有参数的信息。然而，对于我们的项目，我们只使用了前 7 个最重要的参数作为特征。
-
-Github 限制了下载，所以我分享了一个用于下载原始数据的 gdrive 链接：https://drive.google.com/file/d/1lcQmYyZutjsW_yJoHgx3Vles8eCgwQeD/view?usp=sharing
-
-下载后，您必须进行预处理，在论文中，我们在表格中展示了我们如何将应用程序分为 10 个类。
-
-请阅读以下论文了解更多信息：https://doi.org/10.1080/09540091.2020.1870437
-
-## 引用论文和代码：
-
-article{mondal2021dynamic,<br>
-  title={A dynamic network traffic classifier using supervised ML for a Docker-based SDN network},<br>
-  author={Mondal, Pritom Kumar and Aguirre Sanchez, Lizeth P and Benedetto, Emmanuele and Shen, Yao and Guo, Minyi},<br>
-  journal={Connection Science},<br>
-  pages={1--26},<br>
-  year={2021},<br>
-  publisher={Taylor \& Francis}<br>
-}
+Contributions are welcome, especially improvements to reproducibility, documentation, and model evaluation. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.

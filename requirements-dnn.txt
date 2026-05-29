@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Required only for the legacy DNN scripts.
+tensorflow>=2.12

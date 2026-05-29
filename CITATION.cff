@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: Network Traffic Classification
+message: If this repository or dataset supports your work, please cite the associated paper.
+authors:
+  - family-names: Mondal
+    given-names: Pritom Kumar
+  - family-names: Aguirre Sanchez
+    given-names: Lizeth P.
+  - family-names: Benedetto
+    given-names: Emmanuele
+  - family-names: Shen
+    given-names: Yao
+  - family-names: Guo
+    given-names: Minyi
+doi: 10.1080/09540091.2020.1870437
+date-released: 2021-01-01
+repository-code: https://github.com/pritom007/Network-Traffic-Classification
+preferred-citation:
+  type: article
+  title: A dynamic network traffic classifier using supervised ML for a Docker-based SDN network
+  authors:
+    - family-names: Mondal
+      given-names: Pritom Kumar
+    - family-names: Aguirre Sanchez
+      given-names: Lizeth P.
+    - family-names: Benedetto
+      given-names: Emmanuele
+    - family-names: Shen
+      given-names: Yao
+    - family-names: Guo
+      given-names: Minyi
+  journal: Connection Science
+  year: 2021
+  doi: 10.1080/09540091.2020.1870437
