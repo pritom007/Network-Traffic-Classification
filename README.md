@@ -3,10 +3,27 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange.svg)](https://scikit-learn.org/)
 [![Paper](https://img.shields.io/badge/Paper-Connection%20Science-green.svg)](https://doi.org/10.1080/09540091.2020.1870437)
+[![GitHub stars](https://img.shields.io/github/stars/pritom007/Network-Traffic-Classification?style=social)](https://github.com/pritom007/Network-Traffic-Classification/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/pritom007/Network-Traffic-Classification?style=social)](https://github.com/pritom007/Network-Traffic-Classification/forks)
+[![DOI](https://img.shields.io/badge/DOI-10.1080%2F09540091.2020.1870437-blue)](https://doi.org/10.1080/09540091.2020.1870437)
 
 Machine-learning experiments for classifying network traffic flows collected from a Docker-based SDN lab network. The dataset contains more than 300,000 flows analyzed with nDPI, grouped from 100+ application protocols into 10 traffic classes.
 
 This repository includes the original research artifacts, saved models, confusion matrices, and a cleaner Python workflow for reproducing common experiments.
+
+## Project Impact
+
+As of June 2, 2026, this public research repository has accumulated measurable academic and open-source interest:
+
+| Signal | Count | Notes |
+| --- | ---: | --- |
+| GitHub stars | 40 | First public star recorded on March 10, 2021. |
+| GitHub forks | 11 | Fork activity spans September 2020 through September 2025. |
+| Crossref cited-by count | 14 | Citation metadata for the associated Connection Science article. |
+| Google Scholar profile | Available | Author profile provides a complementary citation view. |
+| Paper references | 42 | References registered in Crossref metadata. |
+
+See [Repository Impact](docs/REPOSITORY_IMPACT.md) for the star/fork timeline, citation graph, and data-source notes.
 
 ## Research Summary
 
