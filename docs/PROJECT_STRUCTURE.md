@@ -21,6 +21,8 @@ This repository keeps the original research files while adding a small reusable 
 | `network_traffic_classification/data.py` | Dataset loading and validation helpers. |
 | `network_traffic_classification/models.py` | Model factory for supported scikit-learn classifiers. |
 | `network_traffic_classification/cli.py` | Command-line interface for training and evaluation. |
+| `docs/REPOSITORY_IMPACT.md` | Public star/fork timeline, citation graph, and source notes. |
+| `scripts/collect_repo_impact.py` | No-dependency helper for refreshing public GitHub/Crossref metrics. |
 
 ## Recommended Workflow
 
